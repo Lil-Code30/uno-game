@@ -20,3 +20,60 @@ Pour comprendre le déroulement du jeu UNO, visionnez la vidéo suivante :
 https://www.youtube.com/watch?v=gxVgV6NkJf0&ab_channel=pratiqueTV
 
 ---
+
+# Diagramme UML – Projet UNO
+
+```mermaid
+classDiagram
+    class Jeu {
+        - joueurs : List<Joueur>
+        - paquet : Paquet
+        - defausse : List<Carte>
+        - courant : Carte
+        + demarrerPartie() void
+        + prochainTour() void
+        + verifierCarte(carte : Carte, joueur : Joueur) boolean
+        + appliquerEffet(carte : Carte) void
+    }
+
+    class Joueur {
+        - nom : String
+        - main : List<Carte>
+        + jouerCarte(carte : Carte) void
+        + piocher(paquet : Paquet) void
+        + peutJouer(courant : Carte) boolean
+    }
+
+    class Paquet {
+        - cartes : List<Carte>
+        + melanger() void
+        + piocher() Carte
+        + estVide() boolean
+    }
+
+    class Carte {
+        - couleur : Couleur
+        - valeur : String
+        + estCompatible(autre : Carte) boolean
+    }
+
+    class CarteSpeciale {
+        - typeEffet : String
+        + appliquerEffet(jeu : Jeu) void
+    }
+
+    class Couleur {
+        <<enumeration>>
+        ROUGE
+        VERT
+        BLEU
+        JAUNE
+        NOIR
+    }
+
+    Jeu --> Joueur : "gère"
+    Jeu --> Paquet : "utilise"
+    Joueur --> Carte : "possède *"
+    Paquet --> Carte : "contient *"
+    Carte <|-- CarteSpeciale
+```
