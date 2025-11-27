@@ -77,3 +77,65 @@ classDiagram
     Paquet --> Carte : "contient *"
     Carte <|-- CarteSpeciale
 ```
+
+@startuml
+
+package "UNO Game" {
+
+    class Carte {
+        - Nom: string?
+        - Couleur: string
+        - Valeur: int?
+        --
+        + estCompatible(autre: Carte): bool
+    }
+
+    class CarteSpeciale extends Carte {
+        - TypeEffect: string
+        --
+        + AppliquerEffet(jeu: Jeu): void
+    }
+
+    class Joueur {
+        - Nom: string
+        - Main: List<Carte>
+        --
+        + JouerCarte(carte: Carte): void
+        + Piocher(paquet: Paquet): void
+        + PeutJouer(carte: Carte): bool
+        + CompterPoints(): int
+    }
+
+    class Paquet {
+        - Cartes: List<Carte>
+        --
+        + Melanger(): void
+        + Piocher(): Carte
+        + EstVide(): bool
+        + Reconstituer(defausse: List<Carte>): void
+    }
+
+    class Jeu {
+        - Joueurs: List<Joueur>
+        - Paquet: Paquet
+        - Defausse: List<Carte>
+        - Direction: int
+        - JoueurActuel: int
+        --
+        + DemarrerPartie(): void
+        + TourSuivant(): void
+        + JouerCarte(joueur: Joueur, carte: Carte): void
+        + ChangerDirection(): void
+        + TirerCarte(joueur: Joueur): void
+        + ConditionVictoire(joueur: Joueur): bool
+    }
+
+    Jeu "1" o-- "1" Paquet
+    Jeu "1" o-- "*" Joueur
+    Jeu "1" o-- "*" Carte
+    Joueur "*" --> "*" Carte
+    Paquet "*" --> "*" Carte
+    Carte <|-- CarteSpeciale
+}
+
+@enduml
