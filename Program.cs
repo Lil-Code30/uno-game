@@ -1,2 +1,8 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿using uno_game.classes;
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Welcome To the UNO Game");
+    }
+}
