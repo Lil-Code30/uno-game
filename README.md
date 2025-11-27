@@ -25,19 +25,6 @@ https://www.youtube.com/watch?v=gxVgV6NkJf0&ab_channel=pratiqueTV
 
 ```mermaid
 classDiagram
-    enum Direction {
-        Horaire
-        AntiHoraire
-    }
-
-    enum TypeEffect {
-        Plus2
-        Inverser
-        Passer
-        Joker
-        JokerPlus4
-    }
-
     class Jeu {
         - joueurs : List<Joueur>
         - paquet : Paquet
@@ -95,4 +82,21 @@ classDiagram
     Joueur --> Carte : "possède *"
     Paquet --> Carte : "contient *"
     Carte <|-- CarteSpeciale
+```
+
+### Enums 
+
+```markdown
+enum Direction {
+        Horaire
+        AntiHoraire
+    }
+
+    enum TypeEffect {
+        Plus2
+        Inverser
+        Passer
+        Joker
+        JokerPlus4
+    }
 ```
