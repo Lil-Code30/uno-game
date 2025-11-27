@@ -87,7 +87,7 @@ classDiagram
 ### Enums 
 
 ```markdown
-enum Direction {
+    enum Direction {
         Horaire
         AntiHoraire
     }
