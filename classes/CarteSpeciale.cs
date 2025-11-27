@@ -2,7 +2,7 @@
 {
     class CarteSpeciale : Carte
     {
-        public string? Nom { get; set; }
+       
         /// <summary>
         /// Type of special effect associated with this card
         /// (e.g., "Skip", "Reverse", "Plus2", "Wild", "WildPlus4").

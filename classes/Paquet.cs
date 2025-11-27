@@ -1,4 +1,6 @@
-﻿namespace uno_game.classes
+﻿using static System.Runtime.InteropServices.JavaScript.JSType;
+
+namespace uno_game.classes
 {
     class Paquet
     {
@@ -33,6 +35,26 @@
             }
 
             return true;
+        }
+
+        /// <summary>
+        /// Ajoute une carte dans le paquet.
+        /// Utile pour remettre une carte dans le paquet après qu'elle a été jouée ou pour reconstituer le paquet.
+        /// </summary>
+        /// <param name="carte">La carte à ajouter au paquet</param>
+        public void AjouterCarte(Carte carte)
+        {
+
+        }
+
+        /// <summary>
+        /// Reconstitue le paquet à partir de la défausse.
+        /// Mélange les cartes de la défausse et les ajoute au paquet.
+        /// </summary>
+        /// <param name="defausse">Liste des cartes de la défausse à remettre dans le paquet</param>
+        public void Reconstituer(List<Carte> defausese)
+        {
+
         }
     }
 }

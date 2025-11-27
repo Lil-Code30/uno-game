@@ -2,6 +2,7 @@
 {
     class Carte
     {
+        public string? Nom { get; set; }
         /// The color of the card (e.g., "Red", "Blue", "Green", "Yellow", "black).
         public string Couleur { get; set; }
         public int? Valeur { get; set; }
