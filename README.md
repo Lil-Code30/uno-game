@@ -25,15 +25,31 @@ https://www.youtube.com/watch?v=gxVgV6NkJf0&ab_channel=pratiqueTV
 
 ```mermaid
 classDiagram
+    enum Direction {
+        Horaire
+        AntiHoraire
+    }
+
+    enum TypeEffect {
+        Plus2
+        Inverser
+        Passer
+        Joker
+        JokerPlus4
+    }
+
     class Jeu {
         - joueurs : List<Joueur>
         - paquet : Paquet
         - defausse : List<Carte>
         - courant : Carte
         + demarrerPartie() void
-        + prochainTour() void
+        + TourSuivant() void
         + verifierCarte(carte : Carte, joueur : Joueur) boolean
-        + appliquerEffet(carte : Carte) void
+        + JouerCarte(joueur: Joueur, carte: Carte): void
+        + ChangerDirection(): void
+        + TirerCarte(joueur: Joueur, nb: int = 1): void
+        + ConditionVictoire(joueur: Joueur): bool
     }
 
     class Joueur {
@@ -42,6 +58,7 @@ classDiagram
         + jouerCarte(carte : Carte) void
         + piocher(paquet : Paquet) void
         + peutJouer(courant : Carte) boolean
+        + CompterPoints(): int
     }
 
     class Paquet {
@@ -49,6 +66,8 @@ classDiagram
         + melanger() void
         + piocher() Carte
         + estVide() boolean
+        + AjouterCarte(carte: Carte): void
+        + Reconstituer(defausse: List<Carte>): void
     }
 
     class Carte {
