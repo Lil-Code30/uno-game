@@ -76,7 +76,6 @@ classDiagram
     class CarteNumerique {
         -int valeur
 
-        +void appliquerEffet(jeu : Jeu)
         +bool estCompatible(courant : Carte) <<override>>;
     }
 
