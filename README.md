@@ -26,55 +26,58 @@ https://www.youtube.com/watch?v=gxVgV6NkJf0&ab_channel=pratiqueTV
 ```mermaid
 classDiagram
     class Jeu {
-        - joueurs : List<Joueur>
-        - paquet : Paquet
-        - defausse : List<Carte>
-        - courant : Carte
-        + demarrerPartie() void
-        + TourSuivant() void
-        + verifierCarte(carte : Carte, joueur : Joueur) boolean
-        + JouerCarte(joueur: Joueur, carte: Carte): void
-        + ChangerDirection(): void
-        + TirerCarte(joueur: Joueur, nb: int = 1): void
-        + ConditionVictoire(joueur: Joueur): bool
+        -List<Joueur> joueurs
+        -Paquet paquet
+        -List<Carte> defausse
+        -Carte courant
+        -string direction
+
+        +void demarrerPartie() 
+        +void TourSuivant()
+        +void ChangerDirection()
+        +bool ConditionVictoire(Joueur joueur )
     }
 
     class Joueur {
-        - nom : String
-        - main : List<Carte>
-        + jouerCarte(carte : Carte) void
-        + piocher(paquet : Paquet) void
-        + peutJouer(courant : Carte) boolean
-        + CompterPoints(): int
+        -string nom 
+        -List<Carte> main 
+
+        +void jouerCarte(Carte carte) 
+        +void piocher(Paquet paquet) 
+        +bool peutJouer(Carte courant) 
+        +int CompterPoints()
     }
 
     class Paquet {
-        - cartes : List<Carte>
-        + melanger() void
-        + piocher() Carte
-        + estVide() boolean
-        + AjouterCarte(carte: Carte): void
-        + Reconstituer(defausse: List<Carte>): void
+        -List<Carte> cartes
+
+        +void melanger()
+        +bool estVide()
+        +void AjouterCarte(carte: Carte)
+        +void Reconstituer(defausse: List<Carte>)
     }
 
     class Carte {
-        - couleur : Couleur
-        - valeur : String
-        + estCompatible(autre : Carte) boolean
+        <<abstract>>
+        #string couleur 
+        #string type 
+        #int points 
+
+        *+bool estCompatible(Carte courant )*;
     }
 
     class CarteSpeciale {
-        - typeEffet : String
-        + appliquerEffet(jeu : Jeu) void
+        -string typeEffet
+
+        +void appliquerEffet(jeu : Jeu)
+        +bool estCompatible(courant : Carte) <<override>>;
     }
 
-    class Couleur {
-        <<enumeration>>
-        ROUGE
-        VERT
-        BLEU
-        JAUNE
-        NOIR
+    class CarteNumerique {
+        -int valeur
+
+        +void appliquerEffet(jeu : Jeu)
+        +bool estCompatible(courant : Carte) <<override>>;
     }
 
     Jeu --> Joueur : "gère"
@@ -82,6 +85,7 @@ classDiagram
     Joueur --> Carte : "possède *"
     Paquet --> Carte : "contient *"
     Carte <|-- CarteSpeciale
+    Carte <|-- CarteNumerique
 ```
 
 ### Enums 
@@ -98,5 +102,13 @@ classDiagram
         Passer
         Joker
         JokerPlus4
+    }
+
+    enum Couleur {
+        ROUGE
+        VERT
+        BLEU
+        JAUNE
+        NOIR
     }
 ```
