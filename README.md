@@ -33,7 +33,6 @@ classDiagram
         -string direction
 
         +void demarrerPartie() 
-        +void TourSuivant()
         +void ChangerDirection()
         +bool ConditionVictoire(Joueur joueur )
     }
@@ -43,9 +42,9 @@ classDiagram
         -List<Carte> main 
 
         +void jouerCarte(Carte carte) 
+        +void direUNO(List<Carte> list)
         +void piocher(Paquet paquet) 
         +bool peutJouer(Carte courant) 
-        +int CompterPoints()
     }
 
     class Paquet {
@@ -53,7 +52,6 @@ classDiagram
 
         +void melanger()
         +bool estVide()
-        +void AjouterCarte(carte: Carte)
         +void Reconstituer(defausse: List<Carte>)
     }
 
@@ -61,7 +59,6 @@ classDiagram
         <<abstract>>
         #string couleur 
         #string type 
-        #int points 
 
         *+bool estCompatible(Carte courant )*;
     }
