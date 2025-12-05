@@ -15,15 +15,6 @@ namespace uno_game.classes
         }
 
         /// <summary>
-        /// Draws the top card from the deck.
-        /// Returns the drawn card and removes it from the deck.
-        /// </summary>
-        public Carte Piocher()
-        {
-            return new Carte(); // TODO: Implement draw logic 
-        }
-
-        /// <summary>
         /// Determines whether the deck is empty.
         /// </summary>
         /// <returns>True if no cards remain in the deck; otherwise, false.</returns>
@@ -35,16 +26,6 @@ namespace uno_game.classes
             }
 
             return true;
-        }
-
-        /// <summary>
-        /// Ajoute une carte dans le paquet.
-        /// Utile pour remettre une carte dans le paquet après qu'elle a été jouée ou pour reconstituer le paquet.
-        /// </summary>
-        /// <param name="carte">La carte à ajouter au paquet</param>
-        public void AjouterCarte(Carte carte)
-        {
-
         }
 
         /// <summary>

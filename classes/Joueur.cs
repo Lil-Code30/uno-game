@@ -44,16 +44,5 @@
         {
             return Main;
         }
-
-        /// <summary>
-        /// Calcule et retourne le total des points du joueur.
-        /// Les points sont généralement basés sur les cartes restantes dans la main d'un joueur
-        /// à la fin de la partie (ex : cartes numériques = valeur, cartes spéciales = points définis).
-        /// </summary>
-        /// <returns>Le total des points du joueur</returns>
-        public int CompterPoints()
-        {
-            return 2;
-        }
     }
 }

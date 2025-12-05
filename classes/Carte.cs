@@ -3,14 +3,12 @@
     abstract class Carte
     {
         public string Couleur { get; set; }
-        public int Points { get; set; }
         public string Type { get; set; }
 
-        public Carte(string type, string couleur, int points)
+        public Carte(string type, string couleur)
         {
             this.Type = type;
             this.Couleur = couleur;
-            this.Points = points;
         }
 
 
