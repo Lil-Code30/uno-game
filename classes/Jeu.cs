@@ -40,5 +40,13 @@
         {
 
         }
+        
+        /// <summary>
+        /// Advances the turn to the next player in the sequence.
+        /// </summary>
+        public void PasserJoueurSuivant()
+        {
+
+        }
     }
 }

@@ -33,6 +33,7 @@ classDiagram
         -string direction
 
         +void demarrerPartie() 
+        +void PasserJoueurSuivant()
         +void ChangerDirection()
         +bool ConditionVictoire(Joueur joueur )
     }
