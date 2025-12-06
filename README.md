@@ -50,6 +50,8 @@ classDiagram
     class Paquet {
         -List<Carte> cartes
 
+        -void InitialiserPaquet()
+        +Carte TirerCarte()
         +void melanger()
         +bool estVide()
         +void Reconstituer(defausse: List<Carte>)
