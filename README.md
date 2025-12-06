@@ -29,24 +29,25 @@ classDiagram
         -List<Joueur> joueurs
         -Paquet paquet
         -List<Carte> defausse
-        -Carte courant
         -string direction
         -int indexJoueurActuel
 
         +void DemarrerPartie() 
         +void PasserJoueurSuivant()
         +void ChangerDirection()
-        +bool ConditionVictoire()
+        +bool ConditionVictoire(Joueur joueur)
+        -void AfficherGagnant(Joueur gagnant)
+        -void BoucleDeJeu()
     }
 
     class Joueur {
         -string nom 
         -List<Carte> main 
 
-        +void jouerCarte(Carte carte) 
-        +void direUNO(List<Carte> list)
-        +void piocher(Paquet paquet) 
-        +bool peutJouer(Carte carte, Carte topCarte) 
+        +void JouerCarte(Carte carte) 
+        +void DireUNO(List<Carte> list)
+        +void Piocher(Paquet paquet) 
+        +bool PeutJouer(Carte carte, Carte topCarte) 
         +void AfficherMain();
     }
 
@@ -56,8 +57,8 @@ classDiagram
         -void InitialiserPaquet()
         +Carte TirerCarte()
         +void AjouterCarte()
-        +void melanger()
-        +bool estVide()
+        +void Melanger()
+        +bool EstVide()
         +void Reconstituer(defausse: List<Carte>)
     }
 
@@ -66,23 +67,23 @@ classDiagram
         #string couleur 
         #string type 
 
-        *+bool estCompatible(Carte courant )*;
+        *+bool EstCompatible(Carte courant )*;
         *+void AfficherCarte()*;
     }
 
     class CarteSpeciale {
         -string typeEffet
 
-        +void appliquerEffet(jeu : Jeu)
+        +void AppliquerEffet(jeu : Jeu)
         -void ChoisirCouleur()
-        +bool estCompatible(courant : Carte) <<override>>;
+        +bool EstCompatible(courant : Carte) <<override>>;
         +void AfficherCarte() <<override>>;
     }
 
     class CarteNumerique {
         -int valeur
 
-        +bool estCompatible(courant : Carte) <<override>>;
+        +bool EstCompatible(courant : Carte) <<override>>;
         +void AfficherCarte() <<override>>;
     }
 
