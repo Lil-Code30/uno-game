@@ -85,7 +85,7 @@
                     // joueur pioche 2 cartes
                     for (int i = 0; i < 2; i++)
                     {
-                        if (jeu.Paquet.estVide())
+                        if (jeu.Paquet.EstVide())
                         {
                             jeu.Paquet.Reconstituer(jeu.Defausse);
                         }
@@ -123,7 +123,7 @@
                     // joueur pioche 4 cartes
                     for (int i = 0; i < 4; i++)
                     {
-                        if (jeu.Paquet.estVide())
+                        if (jeu.Paquet.EstVide())
                         {
                             jeu.Paquet.Reconstituer(jeu.Defausse);
                         }
@@ -136,7 +136,7 @@
             }
         }
 
-        public override bool estCompatible(Carte courant)
+        public override bool EstCompatible(Carte courant)
         {
             // Joker ou JokerPlus2 toujours compatible
             if( this.TypeEffect == "Joker" || this.TypeEffect == "JokerPlus4")

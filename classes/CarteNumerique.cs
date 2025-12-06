@@ -9,7 +9,7 @@
             this.Valeur = valeur;
         }
 
-        public override bool estCompatible(Carte courant)
+        public override bool EstCompatible(Carte courant)
         {
             // A numeric card is compatible if it matches the color or the value
             if (courant is CarteNumerique carteNum)

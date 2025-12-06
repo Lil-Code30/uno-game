@@ -30,13 +30,11 @@
         /// </summary>
         public void Piocher(Paquet paquet)
         {
-            if (!paquet.estVide())
+            if (!paquet.EstVide())
             {
                 Carte carte = paquet.TirerCarte();
                 Main.Add(carte);
             }
-
-            // need to handle if the paquet is empty.
         }
 
         /// <summary>
@@ -47,7 +45,7 @@
         /// <returns></returns>
         public bool PeutJouer(Carte carte, Carte topCarte)
         {
-           return carte.estCompatible(topCarte);
+           return carte.EstCompatible(topCarte);
         }
 
         /// <summary>
@@ -60,13 +58,13 @@
             {
                 if (Main[i] is CarteNumerique carteNum)
                 {
-                    Console.Write(i + 1);
+                    Console.Write($"{i + 1} - ");
                     carteNum.AfficherCarte();
                 }
 
                 if (Main[i] is CarteSpeciale carteSpec)
                 {
-                    Console.Write(i + 1);
+                    Console.Write($"{i + 1} - ");
                     carteSpec.AfficherCarte();
                 }
             }

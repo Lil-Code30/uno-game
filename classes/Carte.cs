@@ -20,7 +20,7 @@
         /// <returns>
         /// True if the two cards can be legally played one after the other; otherwise false.
         /// </returns>
-        public abstract bool estCompatible(Carte courant);
+        public abstract bool EstCompatible(Carte courant);
 
         public abstract void AfficherCarte();
     }

@@ -1,6 +1,4 @@
-﻿using static System.Runtime.InteropServices.JavaScript.JSType;
-
-namespace uno_game.classes
+﻿namespace uno_game.classes
 {
     class Paquet
     {
@@ -82,7 +80,7 @@ namespace uno_game.classes
         /// Détermine si le paquet est vide.
         /// </summary>
         /// <returns>Vrai si aucune carte ne reste dans le paquet ; sinon, faux.</returns>
-        public bool estVide()
+        public bool EstVide()
         {
             if (Cartes.Count > 0)
             {
@@ -98,7 +96,7 @@ namespace uno_game.classes
         /// <returns>The card removed from the top of the deck, or null if the deck is empty.</returns>
         public Carte TirerCarte()
         {
-            if (estVide())
+            if (EstVide())
             {
                 // call the Reconstituer function here
                 return null; // for the moment
