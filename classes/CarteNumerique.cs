@@ -9,9 +9,16 @@
             this.Valeur = valeur;
         }
 
+        /// <summary>
+        /// Détermine si cette carte est compatible avec une autre carte,
+        /// </summary>
+        /// <param name="courant">La carte à laquelle comparer.</param>
+        /// <returns>
+        /// Vrai si les deux cartes peuvent être jouées; sinon, faux.
+        /// </returns>
         public override bool EstCompatible(Carte courant)
         {
-            // A numeric card is compatible if it matches the color or the value
+            // Une carte numérique est compatible si elle correspond à la couleur ou à la valeur.
             if (courant is CarteNumerique carteNum)
             {
                 return this.Couleur == courant.Couleur || this.Valeur == carteNum.Valeur;
@@ -20,7 +27,7 @@
         }
 
         /// <summary>
-        /// Displays the card's value and color to the console output.
+        ///  Affiche la valeur et la couleur de la carte
         /// </summary>
         public override void AfficherCarte()
         {

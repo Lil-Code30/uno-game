@@ -91,17 +91,11 @@
         }
 
         /// <summary>
-        /// Removes and returns the top card from the deck.
+        /// Retire et renvoie la carte du dessus du paquet.
         /// </summary>
-        /// <returns>The card removed from the top of the deck, or null if the deck is empty.</returns>
+        /// <returns> La carte retirée du dessus du paquet</returns>
         public Carte TirerCarte()
         {
-            if (EstVide())
-            {
-                // call the Reconstituer function here
-                return null; // for the moment
-            }
-
             Carte newCarte = Cartes[0];
             // -1 carte de la liste
             Cartes.RemoveAt(0);
@@ -132,7 +126,7 @@
                 
                 Carte lastCarte = defausse[defausse.Count - 1];  
 
-                // du 1 - avant derniere
+                // du 1er - avant derniere
                 for(int i = 0; i < defausse.Count - 1 ; i++)
                 {
                     Cartes.Add(defausse[i]);

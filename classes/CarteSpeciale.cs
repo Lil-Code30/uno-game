@@ -5,7 +5,7 @@
        
         /// <summary>
         /// Type effet
-        /// (e.g., "Passer", "Inverser", "Plus2", "Joker", "JokerPlus4").
+        /// ("Passer", "Inverser", "Plus2", "Joker", "JokerPlus4").
         /// </summary>
         public string TypeEffect { get; set; }
         
@@ -63,9 +63,9 @@
         }
 
         /// <summary>
-        /// Applies the card's special effect to the current game state.
+        /// Applique l'effet spécial de la carte à l'état actuel de la partie.
         /// </summary>
-        /// <param name="jeu">The current game instance where the effect is applied.</param>
+        /// <param name="jeu">L'instance actuelle du jeu sur laquelle l'effet est appliqué.</param>
         public void AppliquerEffet(Jeu jeu)
         {
             switch (TypeEffect)
@@ -136,6 +136,13 @@
             }
         }
 
+        /// <summary>
+        /// Détermine si cette carte est compatible avec une autre carte,
+        /// </summary>
+        /// <param name="courant">La carte à laquelle comparer.</param>
+        /// <returns>
+        /// Vrai si les deux cartes peuvent être jouées; sinon, faux.
+        /// </returns>
         public override bool EstCompatible(Carte courant)
         {
             // Joker ou JokerPlus2 toujours compatible
@@ -151,13 +158,12 @@
 
             }
 
-
             // meme couleur
             return this.Couleur == courant.Couleur;
-        }  
-        
+        }
+
         /// <summary>
-        /// Displays a textual representation of the card, including its effect type and color, to the console output.
+        /// Affiche une représentation textuelle de la carte, incluant son type d’effet et sa couleur
         /// </summary>
         public override void AfficherCarte()
         {

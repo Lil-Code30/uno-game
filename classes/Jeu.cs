@@ -5,13 +5,13 @@
         public List<Joueur> Joueurs { get; set; }
         public Paquet Paquet { get; set; }
 
-        // The discard pile where played cards are placed.
+        // La pile de défausse où les cartes jouées sont placées.
         public List<Carte> Defausse { get; set; }
         public int IndexJoueurActuel { get; set; }
 
         /// <summary>
-        /// Direction of play. 
-        /// 1 represents clockwise, -1 represents counterclockwise.
+        /// Sens du jeu.
+        /// 1 représente le sens horaire, -1 représente le sens antihoraire.
         /// </summary>
         public int Direction { get; set; } = 1;
 
@@ -24,9 +24,10 @@
         }
 
         /// <summary>
-        /// Initializes and starts a new UNO game.
-        /// Sets up players, shuffles the deck, deals cards, 
-        /// and prepares the first card in the discard pile.
+        /// Initialise et démarre une partie d’UNO.
+        /// Configure les joueurs
+        /// Initialise et mélange le paquet, distribue les cartes
+        /// et prépare la première carte de la pile de défausse.
         /// </summary>
         public void DemarrerPartie()
         {

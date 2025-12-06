@@ -12,10 +12,10 @@
         }
 
         /// <summary>
-        /// Allows the player to play a specific card from their hand.
-        /// Validates that the card exists in the player's hand before removing it.
+        /// Permet au joueur de jouer une carte spécifique de sa main.
+        /// Vérifie que la carte existe dans la main du joueur avant de la retirer.
         /// </summary>
-        /// <param name="carte">The card the player wants to play.</param>
+        /// <param name="carte">La carte que le joueur souhaite jouer.</param>
         public void JouerCarte(Carte carte)
         {
             if (Main.Contains(carte))
@@ -25,8 +25,7 @@
         }
 
         /// <summary>
-        /// Draws a card from the deck and adds it to the player's hand.
-        /// Should be called when the player cannot or chooses not to play a card.
+        /// Pioche une carte du paquet et l’ajoute à la main du joueur.
         /// </summary>
         public void Piocher(Paquet paquet)
         {
@@ -38,18 +37,18 @@
         }
 
         /// <summary>
-        /// Takes the player card and the deck top card and verify if the player is able to play
+        /// Prend la carte du joueur et la carte courante, puis vérifie si le joueur peut jouer cette carte.
         /// </summary>
         /// <param name="carte"></param>
-        /// <param name="topCarte"></param>
+        /// <param name="carteCourant"></param>
         /// <returns></returns>
-        public bool PeutJouer(Carte carte, Carte topCarte)
+        public bool PeutJouer(Carte carte, Carte carteCourant)
         {
-           return carte.EstCompatible(topCarte);
+           return carte.EstCompatible(carteCourant);
         }
 
         /// <summary>
-        /// Display the player's current hand of cards.
+        /// Affiche la main actuelle du joueur.
         /// </summary>
         public void AfficherMain()
         {
