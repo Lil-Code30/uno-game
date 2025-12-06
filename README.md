@@ -75,12 +75,14 @@ classDiagram
         +void appliquerEffet(jeu : Jeu)
         -void ChoisirCouleur()
         +bool estCompatible(courant : Carte) <<override>>;
+        +void AfficherCarte() <<override>>;
     }
 
     class CarteNumerique {
         -int valeur
 
         +bool estCompatible(courant : Carte) <<override>>;
+        +void AfficherCarte() <<override>>;
     }
 
     Jeu --> Joueur : "gère"
