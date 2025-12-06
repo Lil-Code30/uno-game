@@ -31,6 +31,7 @@ classDiagram
         -List<Carte> defausse
         -Carte courant
         -string direction
+        -int indexJoueurActuel
 
         +void demarrerPartie() 
         +void PasserJoueurSuivant()
@@ -45,7 +46,8 @@ classDiagram
         +void jouerCarte(Carte carte) 
         +void direUNO(List<Carte> list)
         +void piocher(Paquet paquet) 
-        +bool peutJouer(Carte courant) 
+        +bool peutJouer(Carte carte, Carte topCarte) 
+        +void AfficherMain();
     }
 
     class Paquet {
@@ -64,6 +66,7 @@ classDiagram
         #string type 
 
         *+bool estCompatible(Carte courant )*;
+        *+void AfficherCarte()*;
     }
 
     class CarteSpeciale {
