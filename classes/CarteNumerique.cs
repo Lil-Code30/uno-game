@@ -4,7 +4,7 @@
     {
         public int Valeur { get; set; }
 
-        public CarteNumerique(string type, string couleur, int points, int valeur) : base(type, couleur, points)
+        public CarteNumerique(string type, string couleur, int valeur) : base(type, couleur)
         {
             this.Valeur = valeur;
         }

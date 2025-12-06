@@ -124,7 +124,7 @@ namespace uno_game.classes
                 
                 Carte lastCarte = defausse[defausse.Count - 1];  
 
-                
+                // du 1 - avant derniere
                 for(int i = 0; i < defausse.Count - 1 ; i++)
                 {
                     Cartes.Add(defausse[i]);
