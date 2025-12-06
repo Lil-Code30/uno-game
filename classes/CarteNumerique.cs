@@ -18,5 +18,13 @@
             }
             return this.Couleur == courant.Couleur;
         }
+
+        /// <summary>
+        /// Displays the card's value and color to the console output.
+        /// </summary>
+        public override void AfficherCarte()
+        {
+            Console.WriteLine($"[Carte:${Valeur} - ${Couleur}]");
+        }
     }
 }
