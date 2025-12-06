@@ -7,9 +7,9 @@
         /// Type effet
         /// ("Passer", "Inverser", "Plus2", "Joker", "JokerPlus4").
         /// </summary>
-        public string TypeEffect { get; set; }
+        public string TypeEffect { get; private set; }
         
-        public CarteSpeciale(string type, string couleur, string typeEffect) : base(type, couleur )
+        public CarteSpeciale(string couleur, string typeEffect) : base("Speciale", couleur )
         {
             this.TypeEffect = typeEffect;
         }

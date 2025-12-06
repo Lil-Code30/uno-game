@@ -2,11 +2,11 @@
 {
      class CarteNumerique : Carte
     {
-        public int Valeur { get; set; }
+        private int valeur;
 
-        public CarteNumerique(string type, string couleur, int valeur) : base(type, couleur)
+        public CarteNumerique(string couleur, int valeur) : base("Numerique", couleur)
         {
-            this.Valeur = valeur;
+            this.valeur = valeur;
         }
 
         /// <summary>
@@ -21,7 +21,7 @@
             // Une carte numérique est compatible si elle correspond à la couleur ou à la valeur.
             if (courant is CarteNumerique carteNum)
             {
-                return this.Couleur == courant.Couleur || this.Valeur == carteNum.Valeur;
+                return this.Couleur == courant.Couleur || this.valeur == carteNum.valeur;
             }
             return this.Couleur == courant.Couleur;
         }
@@ -31,7 +31,7 @@
         /// </summary>
         public override void AfficherCarte()
         {
-            Console.WriteLine($"[Carte:{Valeur} - {Couleur}]");
+            Console.WriteLine($"[Carte:{valeur} - {Couleur}]");
         }
     }
 }

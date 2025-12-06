@@ -67,7 +67,7 @@ classDiagram
 
     class Carte {
         <<abstract>>
-        #string couleur 
+        +string couleur 
         #string type 
 
         *+bool EstCompatible(Carte courant )*;

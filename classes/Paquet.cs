@@ -2,11 +2,11 @@
 {
     class Paquet
     {
-        public List<Carte> Cartes { get; set; }
+        private List<Carte> cartes;
 
         public Paquet()
         {
-            Cartes = new List<Carte>();
+            cartes = new List<Carte>();
             InitialiserPaquet();
 
         }
@@ -21,37 +21,37 @@
             // pour chaque couleur
             foreach(string couleur in couleurs)
             {
-                
-                Cartes.Add(new CarteNumerique("Numerique", couleur, 0));
+
+                cartes.Add(new CarteNumerique(couleur, 0));
 
                 // Ajout des carte 1-9 (deux cartes de chaque chiffre)
                 for(int i = 1; i <= 9; i++)
                 {
-                    Cartes.Add(new CarteNumerique("Numerique", couleur, i));
-                    Cartes.Add(new CarteNumerique("Numerique", couleur, i));
+                    cartes.Add(new CarteNumerique(couleur, i));
+                    cartes.Add(new CarteNumerique(couleur, i));
                 }
 
                 // Ajout des cartes spéciales (2 de chaque)
-                Cartes.Add(new CarteSpeciale("Speciale", couleur, "Plus2"));
-                Cartes.Add(new CarteSpeciale("Speciale", couleur, "Plus2"));
+                cartes.Add(new CarteSpeciale( couleur, "Plus2"));
+                cartes.Add(new CarteSpeciale( couleur, "Plus2"));
 
-                Cartes.Add(new CarteSpeciale("Speciale", couleur, "Inverser"));
-                Cartes.Add(new CarteSpeciale("Speciale", couleur, "Inverser"));
+                cartes.Add(new CarteSpeciale( couleur, "Inverser"));
+                cartes.Add(new CarteSpeciale( couleur, "Inverser"));
 
-                Cartes.Add(new CarteSpeciale("Speciale", couleur, "Passer"));
-                Cartes.Add(new CarteSpeciale("Speciale", couleur, "Passer"));
+                cartes.Add(new CarteSpeciale( couleur, "Passer"));
+                cartes.Add(new CarteSpeciale( couleur, "Passer"));
             }
 
             // Ajout 4 Jokers
             for(int i = 1; i<=4; i++)
             {
-                Cartes.Add(new CarteSpeciale("Speciale", "NOIR", "Joker"));
+                cartes.Add(new CarteSpeciale( "NOIR", "Joker"));
             }
 
             // Ajout 4 Joker +4
             for(int i =1; i<=4; i++)
             {
-                Cartes.Add(new CarteSpeciale("Speciale", "NOIR", "JokerPlus4"));
+                cartes.Add(new CarteSpeciale("NOIR", "JokerPlus4"));
             }
             
 
@@ -65,14 +65,14 @@
         public void Melanger()
         {
             Random rng = new Random();
-            int n = Cartes.Count;
+            int n = cartes.Count;
             while (n > 1)
             {
                 n--;
                 int k = rng.Next(n + 1);
-                Carte temp = Cartes[k];
-                Cartes[k] = Cartes[n];
-                Cartes[n] = temp;
+                Carte temp = cartes[k];
+                cartes[k] = cartes[n];
+                cartes[n] = temp;
             }
         }
 
@@ -82,7 +82,7 @@
         /// <returns>Vrai si aucune carte ne reste dans le paquet ; sinon, faux.</returns>
         public bool EstVide()
         {
-            if (Cartes.Count > 0)
+            if (cartes.Count > 0)
             {
                 return false;
             }
@@ -96,9 +96,9 @@
         /// <returns> La carte retirée du dessus du paquet</returns>
         public Carte TirerCarte()
         {
-            Carte newCarte = Cartes[0];
+            Carte newCarte = cartes[0];
             // -1 carte de la liste
-            Cartes.RemoveAt(0);
+            cartes.RemoveAt(0);
 
             return newCarte;
         }
@@ -110,7 +110,7 @@
         /// <param name="carte">La carte à ajouter au paquet</param>
         public void AjouterCarte(Carte carte)
         {
-            Cartes.Add(carte);
+            cartes.Add(carte);
         }
 
         /// <summary>
@@ -129,7 +129,7 @@
                 // du 1er - avant derniere
                 for(int i = 0; i < defausse.Count - 1 ; i++)
                 {
-                    Cartes.Add(defausse[i]);
+                    cartes.Add(defausse[i]);
                 }
 
                 defausse.Clear();

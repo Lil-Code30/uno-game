@@ -3,7 +3,7 @@
     abstract class Carte
     {
         public string Couleur { get; set; }
-        public string Type { get; set; }
+        public string Type { get; protected set; }
 
         public Carte(string type, string couleur)
         {

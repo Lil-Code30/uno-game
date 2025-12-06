@@ -7,7 +7,7 @@
 
         // La pile de défausse où les cartes jouées sont placées.
         public List<Carte> Defausse { get; set; }
-        public int IndexJoueurActuel { get; set; }
+        public int IndexJoueurActuel { get; private set; }
 
         /// <summary>
         /// Sens du jeu.
