@@ -161,7 +161,7 @@
         /// </summary>
         public override void AfficherCarte()
         {
-            Console.WriteLine($"[Carte:${TypeEffect} - ${Couleur}]");
+            Console.WriteLine($"[Carte:{TypeEffect} - {Couleur}]");
         }
     }
 }

@@ -24,7 +24,7 @@
         /// </summary>
         public override void AfficherCarte()
         {
-            Console.WriteLine($"[Carte:${Valeur} - ${Couleur}]");
+            Console.WriteLine($"[Carte:{Valeur} - {Couleur}]");
         }
     }
 }
