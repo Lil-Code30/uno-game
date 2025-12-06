@@ -38,6 +38,9 @@ classDiagram
         +bool ConditionVictoire(Joueur joueur)
         -void AfficherGagnant(Joueur gagnant)
         -void BoucleDeJeu()
+        -void AfficherCarteCourante()
+        -bool PossedeCoupJouable(Joueur joueur, Carte carteCourante)
+        -void JouerCarte(Joueur joueur, Carte carte)
     }
 
     class Joueur {
