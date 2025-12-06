@@ -55,6 +55,7 @@ classDiagram
 
         -void InitialiserPaquet()
         +Carte TirerCarte()
+        +void AjouterCarte()
         +void melanger()
         +bool estVide()
         +void Reconstituer(defausse: List<Carte>)

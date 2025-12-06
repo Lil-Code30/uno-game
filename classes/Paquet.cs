@@ -112,6 +112,16 @@ namespace uno_game.classes
         }
 
         /// <summary>
+        /// Ajoute une carte dans le paquet.
+        /// Utile pour remettre une carte dans le paquet après qu'elle a été jouée ou pour reconstituer le paquet.
+        /// </summary>
+        /// <param name="carte">La carte à ajouter au paquet</param>
+        public void AjouterCarte(Carte carte)
+        {
+            Cartes.Add(carte);
+        }
+
+        /// <summary>
         /// Reconstitue le paquet à partir de la défausse.
         /// Mélange les cartes de la défausse et les ajoute au paquet.
         /// Garde la derniere carte de la defausse
