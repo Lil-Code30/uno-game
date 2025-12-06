@@ -33,10 +33,10 @@ classDiagram
         -string direction
         -int indexJoueurActuel
 
-        +void demarrerPartie() 
+        +void DemarrerPartie() 
         +void PasserJoueurSuivant()
         +void ChangerDirection()
-        +bool ConditionVictoire(Joueur joueur )
+        +bool ConditionVictoire()
     }
 
     class Joueur {
