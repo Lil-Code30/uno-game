@@ -69,6 +69,7 @@ classDiagram
         -string typeEffet
 
         +void appliquerEffet(jeu : Jeu)
+        -void ChoisirCouleur()
         +bool estCompatible(courant : Carte) <<override>>;
     }
 
